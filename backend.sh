@@ -64,7 +64,7 @@ cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.serv
 # prepare mysql schema
 
 dnf install mysql -y &>>$LOG_FILE_NAME
-VALIADTE $? "installing client"
+VALIADTE $? "installing mysql client"
 
 mysql -h mysql.dheera82s.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE_NAME
 VALIDATE $? "setting up the transaction schema and tables"
